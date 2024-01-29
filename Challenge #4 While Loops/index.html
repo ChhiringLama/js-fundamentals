@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bills=[22, 295,176,440,37,105,10,1100,86,52];
+        const tips=[];
+        const total=[];
+
+        let average=0;
+        let sum=0;
+
+        //Method II
+        const caclTip=function(bill){
+            return bill>=50 && bill<=300? (bill/100)*15:(bill/100)*20;
+        }
+
+        for(let i=0; i<bills.length; i++){
+
+                //Method I
+                // function calcTips(){
+                //     if(bills[i] >=50 && bills[i] <=300){
+                //         tips.push((Math.round(bills[i]/100)*15))
+                //     }else{
+                //         tips.push((Math.round(bills[i]/100)*20))
+                //     }
+                // }
+                // calcTips();
+                // total[i]=tips[i]+bills[i];
+
+                //Or
+                //Method II
+                tips.push(caclTip(bills[i]))
+                total[i]=tips[i]+bills[i];
+        }
+
+        let calcAverage=(array)=>{
+            for(let k=0; k<array.length; k++){
+                
+                //sum=Math.round(sum+array[k]);
+                //Or 
+                sum+=array[k];}
+
+            average=Math.round(sum/array.length);
+            console.log(`The average was ${average}`);
+        }
+        
+        calcAverage(total);
+
+        console.log(`The total array shows ${total}`);
+    </script>
+</body>
+</html>

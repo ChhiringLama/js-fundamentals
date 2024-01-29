@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Continue, Skip Current Iteration
+        //Break, Exit the whole loop
+
+        const array = ['Johnas', 23-40, 23, NaN];
+       
+        for (let i = 0; i <= array.length - 1; i++) {
+            
+            if(typeof array[i]!=="string"){
+                //Or Skip/Exit the current iteration
+                continue;
+            }else{
+                console.log(`${array[i]} a string is found, loop continued`);
+            }
+           
+            if(typeof array[i]==="number"){
+                //Or Exit the loop completely
+                break;
+            }else{
+                console.log(`${array[i]} is a string`);
+            }
+        }
+      
+      
+
+    </script>
+</body>
+
+</html>
