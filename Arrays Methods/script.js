@@ -80,3 +80,38 @@ console.log(newArray);
 //Index of here gives us index of the searched value
 console.log(assoArray.findIndex(x=> x.name=="Pogba"));
 
+//The sort function 
+//Automatically sorts the elements in an array by default in ascending order of either numerals or alphabetical
+
+const unSortedArray=[4,5,7,1,3,2];
+const unSortedAlphabets=["apple","cat","ball"];
+
+unSortedArray.sort();
+unSortedAlphabets.sort();
+
+//We can also include a compartor function (a function that does the comparing )
+
+let unSortedObject=[{x:2,y:20},{x:1,y:40},{x:0, y:10}];
+
+function ComparingFunction(a,b){
+    return a.y-b.y
+
+    //What's Happening here?
+    //a.y = 20 - b.y=40
+    //a and b are choosen from front indices of the array
+    //if negative move a should be place before b, if positive move a after b
+    //The first comparision
+    //20-40=-20
+    //the partially sorted array generated: [{x:2, y:20},{x:1, y:40},{x:0, y:10}];
+    //a and b again picked from the second index of the partially unsoreted array
+    //40-10=30
+    //a is positive, it will be placed before b
+    //the partially sorted array will be[{x:2, y:20},{x:0, y:10},{x:1, y:40}]
+    //a and b now will be a={x:0, y:10}, b={x:2, y:20}
+    //10-20 = -10
+    //a is kept before the b
+    //The final array is [{x:0, y:10},{x:2, y:20},}{x:1, y:40}];
+}
+
+unSortedObject.sort(ComparingFunction);
+console.log(unSortedObject);
